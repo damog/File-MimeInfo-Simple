@@ -1,0 +1,26 @@
+---
+abstract: 'Simple implementation to determine file type'
+author:
+  - 'David Moreno &lt;david@axiombox.com&gt;.'
+build_requires:
+  ExtUtils::MakeMaker: 6.42
+configure_requires:
+  ExtUtils::MakeMaker: 6.42
+distribution_type: module
+generated_by: 'Module::Install version 0.91'
+license: MIT
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: File-MimeInfo-Simple
+no_index:
+  directory:
+    - inc
+    - test
+requires:
+  Capture::Tiny: 0.06
+  Modern::Perl: 1.03
+  perl: 5.10.0
+resources:
+  license: http://dev.perl.org/licenses/
+version: 0.1
