@@ -2,11 +2,11 @@ package File::MimeInfo::Simple;
 
 use Modern::Perl;
 use Carp;
-use Capture::Tiny qw/capture/;
+use Capture::Tiny qw/capture_merged/;
 
 require Exporter;
 
-our $VERSION = '0.1';
+our $VERSION = '0.3';
 
 our @ISA = qw(Exporter);
 our @EXPORT = qw(mimetype);
@@ -22,12 +22,14 @@ sub mimetype {
 	if($^O =~ m!MSWin32!i) {
 		# nothing by now
 	} else {
-		($output) = capture {
+		($output) = capture_merged {
 			system("file --mime -br $filename")
 		}
 	}
 		
-	chomp $output; $output;
+	chomp $output;
+	$output =~ s/;.*//;
+	$output;
 }
 
 1;
