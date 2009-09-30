@@ -4,11 +4,10 @@ use strict;
 use warnings;
 
 use Carp;
-use Capture::Tiny qw/capture_merged/;
 
 require Exporter;
 
-our $VERSION = '0.4';
+our $VERSION = '0.6';
 our @ISA = qw(Exporter);
 our @EXPORT = qw(mimetype);
 
@@ -23,14 +22,12 @@ sub mimetype {
 	if($^O =~ m!MSWin32!i) {
 		# nothing by now
 	} else {
-		($output) = capture_merged {
-			system("file --mime -br $filename")
-		}
+    	$output = `file --mime -br $filename`;
 	}
 		
 	chomp $output;
-	$output =~ s/;.*//;
-	$output;
+  $output =~ s/;.*//;
+  $output;
 }
 
 1;
@@ -57,14 +54,6 @@ inspired on Matt Aimonetti's mimetype-fu used on Ruby and the Rails world.
 
 C<mimetype> is exported by default. It receives a parameter, the file
 path. It returns an string containing the mime type for the file.
-
-=head1 DEPENDENCIES
-
-=over
-
-=item C<Capture::Tiny>
-
-=back
 
 =head1 TODO
 
