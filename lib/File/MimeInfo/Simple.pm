@@ -1,13 +1,14 @@
 package File::MimeInfo::Simple;
 
-use Modern::Perl;
+use strict;
+use warnings;
+
 use Carp;
 use Capture::Tiny qw/capture_merged/;
 
 require Exporter;
 
-our $VERSION = '0.3';
-
+our $VERSION = '0.4';
 our @ISA = qw(Exporter);
 our @EXPORT = qw(mimetype);
 
@@ -61,14 +62,9 @@ path. It returns an string containing the mime type for the file.
 
 =over
 
-=item C<Modern::Perl>
-
 =item C<Capture::Tiny>
 
 =back
-
-They are both great and excellent modules that everyone should install,
-use and advocate on a regular basis.
 
 =head1 TODO
 
