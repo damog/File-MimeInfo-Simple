@@ -60,12 +60,13 @@ File::MimeInfo::Simple - Simple implementation to determine file type
 
  use File::MimeInfo::Simple;
  say mimetype("/Users/damog/vatos_rudos.jpg"); # prints out 'image/jpeg'
+ say mimetype("C:\perl\foo.pl") # prints out 'application/x-perl'
 
 =head1 DESCRIPTION
 
 C<File::MimeInfo::Simple> is a much simpler implementation and uses a much
 simpler approach than C<File::MimeInfo>, using the 'file' command on a
-UNIX-based operating system. Windows support will be available soon. It's
+UNIX-based operating system. Windows uses a key-value list for extensions. It's
 inspired on Matt Aimonetti's mimetype-fu used on Ruby and the Rails world.
 
 =head1 FUNCTIONS
@@ -74,10 +75,6 @@ inspired on Matt Aimonetti's mimetype-fu used on Ruby and the Rails world.
 
 C<mimetype> is exported by default. It receives a parameter, the file
 path. It returns an string containing the mime type for the file.
-
-=head1 TODO
-
-Make it work for Windows.
 
 =head1 AUTHOR
 
