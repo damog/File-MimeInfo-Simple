@@ -12,6 +12,7 @@ license 'MIT';
 install_share;
 
 requires 'File::Slurp' => '0';
+requires 'YAML::Syck' => '0';
 test_requires 'Test::More' => '0';
 
 WriteAll;

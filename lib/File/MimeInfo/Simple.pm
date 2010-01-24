@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 use Carp;
-use YAML 'Load';
+use YAML::Syck;
 use File::Slurp;
 
 require Exporter;
