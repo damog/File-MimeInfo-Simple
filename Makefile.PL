@@ -11,6 +11,7 @@ all_from 'lib/File/MimeInfo/Simple.pm';
 license 'MIT';
 install_share;
 
+requires 'File::Slurp' => '0';
 test_requires 'Test::More' => '0';
 
 WriteAll;
