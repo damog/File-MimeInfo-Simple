@@ -33,6 +33,6 @@ is($lookup->('my.file.name.zip'), 'application/zip', 'multiple dots uses last ex
 # Test 7: Full path with extension
 is($lookup->('/path/to/some/file.jpg'), 'image/jpeg', 'full path extracts extension correctly');
 
-# Test 8: No extension returns empty string
-is($lookup->('noextension'), '', 'no extension returns empty string');
+# Test 8: No extension returns undef
+is($lookup->('noextension'), undef, 'no extension returns undef');
 
