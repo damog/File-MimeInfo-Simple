@@ -19,7 +19,7 @@ FUNCTIONS
     path. It returns an string containing the mime type for the file.
 
 AUTHOR
-    David Moreno &lt;david@axiombox.com&gt;.
+    David Moreno &lt;damog@damog.net&gt;.
 
 LICENSE
     Copyright 2009 David Moreno.

@@ -27,7 +27,11 @@ sub mimetype {
 	if($^O =~ m!MSWin32!i) {
 		return _find_mimetype_by_table($filename);
 	} else {
-    	$mimetype = `file --mime -br $filename`;
+    	# Use safe pipe open to avoid shell injection
+    	if (open(my $fh, '-|', 'file', '--mime', '-br', $filename)) {
+    		$mimetype = <$fh>;
+    		close($fh);
+    	}
 		unless($mimetype) {
 			return _find_mimetype_by_table($filename);
 		}
@@ -78,7 +82,7 @@ path. It returns an string containing the mime type for the file.
 
 =head1 AUTHOR
 
-David Moreno &lt;david@axiombox.com&gt;.
+David Moreno &lt;damog@damog.net&gt;.
 
 =head1 LICENSE
 

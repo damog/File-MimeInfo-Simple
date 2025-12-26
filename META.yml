@@ -1,7 +1,7 @@
 ---
 abstract: 'Simple implementation to determine file type'
 author:
-  - 'David Moreno &lt;david@axiombox.com&gt;.'
+  - 'David Moreno &lt;damog@damog.net&gt;.'
 build_requires:
   ExtUtils::MakeMaker: 6.42
   Test::More: 0
