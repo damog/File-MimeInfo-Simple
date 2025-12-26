@@ -46,9 +46,8 @@ sub mimetype {
 sub _find_mimetype_by_table {
 	my($filename) = shift;
 	my $mimetype = q{};
-	# getting extension. this is SIMPLE implementation, isn't it? :)
-	my($ext) = $filename =~ /.+\.(.+?)$/;
-	# my $ext = pop @{[split /\./, $filename]};
+	# Extract extension: everything after the last dot
+	my($ext) = $filename =~ /\.([^.]+)$/;
 	return $mimetype unless $ext;
 	return $yaml->{lc $ext} if(exists $yaml->{lc $ext});
 	return $mimetype;
